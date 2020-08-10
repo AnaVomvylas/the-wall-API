@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "the-wall-api", "the-wall-api\the-wall-api.csproj", "{AAD57843-EDDC-40A7-868B-0DFC08619DBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAD57843-EDDC-40A7-868B-0DFC08619DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD57843-EDDC-40A7-868B-0DFC08619DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD57843-EDDC-40A7-868B-0DFC08619DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD57843-EDDC-40A7-868B-0DFC08619DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C180068A-A482-4728-A735-9EC6F1D0C6A4}
+	EndGlobalSection
+EndGlobal
