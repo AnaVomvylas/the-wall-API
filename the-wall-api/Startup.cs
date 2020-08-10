@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using the_wall_api.Middleware;
+using the_wall_api.Services;
 
 namespace the_wall_api
 {
@@ -26,6 +21,9 @@ namespace the_wall_api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTokenAuthentication(Configuration);
+            services.AddSingleton<JwtService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,7 +37,7 @@ namespace the_wall_api
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
