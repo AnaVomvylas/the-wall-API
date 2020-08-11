@@ -21,11 +21,13 @@ namespace the_wall_api.Middleware
             })
             .AddJwtBearer(x =>
             {
+                x.SaveToken = true;
+                x.RequireHttpsMetadata = false;
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
                     ValidIssuer = "localhost",
                     ValidAudience = "localhost"
                 };

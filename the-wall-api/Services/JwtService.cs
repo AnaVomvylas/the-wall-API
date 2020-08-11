@@ -12,7 +12,6 @@ namespace the_wall_api.Services
         private readonly string _secret;
         private readonly string _expDate;
 
-        //maybe remove the input parameter
         public JwtService(IConfiguration config)
         {
             _secret = config.GetSection("JwtConfig").GetSection("secret").Value;
