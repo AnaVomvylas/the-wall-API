@@ -22,6 +22,10 @@ namespace the_wall_api
         {
             services.AddControllers();
             services.AddTokenAuthentication(Configuration);
+
+            services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
+            services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
+
             services.AddSingleton<JwtService>();
         }
 

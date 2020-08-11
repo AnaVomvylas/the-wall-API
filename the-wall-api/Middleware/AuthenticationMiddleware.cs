@@ -28,8 +28,6 @@ namespace the_wall_api.Middleware
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    ValidIssuer = "localhost",
-                    ValidAudience = "localhost"
                 };
             });
 
