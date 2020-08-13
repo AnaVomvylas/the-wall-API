@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
-using the_wall_api;
 
-namespace PuzzleBandAPI.Services
+namespace the_wall_api.Services
 {
     public class UserService
     {
@@ -31,19 +31,6 @@ namespace PuzzleBandAPI.Services
             return user;
         }
 
-        public AuthenticateResponse Authenticate(AuthenticateRequest model)
-        {
-            var user = _users.SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
-
-            // return null if user not found
-            if (user == null) return null;
-
-            // authentication successful so generate jwt token
-            var token = generateJwtToken(user);
-
-            return new AuthenticateResponse(user, token);
-        }
-
         public void Update(string id, User userIn) => _users.ReplaceOne(user => user.Id == id, userIn);
 
         public void Remove(User userIn) =>
@@ -51,5 +38,18 @@ namespace PuzzleBandAPI.Services
 
         public void Remove(string id) =>
             _users.DeleteOne(user => user.Id == id);
+
+        public User Authenticate(AuthenticateRequest model)
+        {
+            User user = null;
+            try
+            {
+                user = _users.Find<User>(user => user.Username == model.Username && user.Password == model.Password).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+            }
+            return user;
+        }
     }
 }

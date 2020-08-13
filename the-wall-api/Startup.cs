@@ -27,6 +27,7 @@ namespace the_wall_api
             services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
 
             services.AddSingleton<JwtService>();
+            services.AddSingleton<UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
