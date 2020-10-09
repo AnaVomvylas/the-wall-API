@@ -27,7 +27,7 @@ Returns true if username and password exist in the users document.
 ## Middleware
 
 #### AuthenticationMiddleware
-Adds token validation for controllers with the ```$ [Authorize]``` property. 
+Adds token validation for controllers with the ```[Authorize]``` property. 
 
 ## Controllers
 
@@ -45,7 +45,7 @@ Returns user credentials and JWT token if successful.
 
 #### WeatherForecastController
 Template controller that comes from project creation.
-Added the ```$ [Authorize]``` property to test the [Authentication Middleware](#authenticationmiddleware)
+Added the ```[Authorize]``` property to test the [Authentication Middleware](#authenticationmiddleware)
 
 * GET - /weatherforecast
 
