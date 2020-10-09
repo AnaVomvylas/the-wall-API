@@ -19,9 +19,11 @@ Returns a JWT Token signed with a private key. The claim used is the username an
 #### UserService
 
 * CRUD functions 
+
 For mongoDB database, using the MongoDB.Driver library.
 
 * Authenticate
+
 Returns true if username and password exist in the users document.
 
 ## Middleware
@@ -35,11 +37,13 @@ Adds token validation for controllers with the ```[Authorize]``` property.
 Mock controller to test the JWT service
 
 * GET - api/sampleToken
-Returns a new JWT token with "fakeUsername" as username claim
+
+Returns a new JWT token with "fakeUsername" as username claim.
 
 #### UsersController
 
 * POST - users/authenticate
+
 Calls the Authenticate function of the [User Service](#userservice).
 Returns user credentials and JWT token if successful.
 
@@ -48,4 +52,6 @@ Template controller that comes from project creation.
 Added the ```[Authorize]``` property to test the [Authentication Middleware](#authenticationmiddleware)
 
 * GET - /weatherforecast
+
+Returns the sample weather forecast only if the JWT token is valid.
 
